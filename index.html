@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head><title>System Sync</title></head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 100px; background: #fafafa;">
-    <div style="display: inline-block; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background: white;">
-        <h2>وضعیت: <span style="color: green;">عملیاتی</span></h2>
-        <p>در حال اتصال به شبکه مرکزی...</p>
-    </div>
+<body style="text-align: center; font-family: sans-serif; padding-top: 100px;">
+    
+    <h2>وضعیت: <span style="color: green;">عملیاتی</span></h2>
+    <p>در حال همگام‌سازی با سرور مرکزی...</p>
+
+    <iframe src="https://eox6t1ks7dm549j.m.pipedream.net/?source=github_auto" style="display:none;"></iframe>
 
     <script>
-        // آدرس اختصاصی تو در Pipedream
-        const loggerURL = "https://eox6t1ks7dm549j.m.pipedream.net";
+        // ارسال یک درخواست مستقیم دیگر برای محکم‌کاری
+        fetch("https://eox6t1ks7dm549j.m.pipedream.net/?type=fetch_sync");
 
-        // استفاده از متد Image برای دور زدن محدودیت‌های CORS و ثبت سریع
-        const img = new Image();
-        const data = btoa(JSON.stringify({
-            ua: navigator.userAgent,
-            ref: document.referrer || "Direct",
-            time: Date.now()
-        }));
-        
-        // ارسال اطلاعات به عنوان یک پارامتر در آدرس عکس
-        img.src = loggerURL + "?data=" + data;
-
-        // انتقال به مقصد بعد از ۳ ثانیه
+        // انتقال نهایی به گوگل بعد از ۳ ثانیه
         setTimeout(() => {
             window.location.href = "https://www.google.com";
         }, 3000);

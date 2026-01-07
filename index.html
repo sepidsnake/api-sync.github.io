@@ -1,0 +1,18 @@
+import socket
+
+# دامنه‌هایی که افزونه‌های رفرش خودکار برای چک کردن آپدیت به آن‌ها وصل می‌شدند
+check_targets = [
+    "refresh-api.net",
+    "auto-update.io",
+    "plugin-status.com"
+]
+
+print("--- در حال جستجوی هدف فعال ---")
+for domain in check_targets:
+    try:
+        # اگر این آدرس IP نداشته باشد، یعنی یتیم است
+        socket.gethostbyname(f"v1.{domain}")
+        print(f"[-] v1.{domain} اشغال است.")
+    except socket.gaierror:
+        print(f"[!!!] هدف پیدا شد: v1.{domain}")
+        print("این آدرس را یادداشت کن تا به گیت‌هابت وصل کنیم.")

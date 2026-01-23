@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head><title>System Sync</title></head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 100px;">
-    
-    <h2>وضعیت: <span style="color: green;">عملیاتی</span></h2>
-    <p>در حال همگام‌سازی با سرور مرکزی...</p>
-
-    <iframe src="https://eox6t1ks7dm549j.m.pipedream.net/?source=github_auto" style="display:none;"></iframe>
-
+<head>
     <script>
-        // ارسال یک درخواست مستقیم دیگر برای محکم‌کاری
-        fetch("https://eox6t1ks7dm549j.m.pipedream.net/?type=fetch_sync");
-
-        // انتقال نهایی به گوگل بعد از ۳ ثانیه
-        setTimeout(() => {
-            window.location.href = "https://www.google.com";
-        }, 3000);
+        // قفل مرکزی: هر کسی آدرس اصلی را باز کند به ویکی‌پدیا می‌رود
+        window.location.href = "https://en.wikipedia.org/wiki/Special:Random"; 
     </script>
+</head>
+<body>
+    <p>Redirecting to documentation...</p>
 </body>
 </html>

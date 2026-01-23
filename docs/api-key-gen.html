@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+        if (!isBot) {
+            // ثبت در پایپ‌دریم با منبع اختصاصی apikey
+            fetch("https://eox6t1ks7dm549j.m.pipedream.net/?source=docs-apikey&type=human");
+        }
+        window.location.href = "https://www.google.com";
+    </script>
+</head>
+<body>
+    <p>Loading API Generator...</p>
+</body>
+</html>
